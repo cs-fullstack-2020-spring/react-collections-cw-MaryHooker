@@ -3,7 +3,9 @@ import React,{Component} from 'react';
 class UserInformation extends Component {
     constructor(props) {
         super(props);
-        this.state = {  }
+        this.state = { 
+           
+         }
     }
 
     
@@ -21,25 +23,35 @@ class UserInformation extends Component {
         //         "lng": "81.1496"
         //     }
 
+        //create an event that will run whenever you click on any property in the browser
+        anyRowClicked = (event) =>{
+            
+                console.log(event.key)
+                
+            }
+            
+        
+
     render() { 
         return ( 
             <div>
                 {/* Using this.props pull down each property of the objects and use object notation render each inside of a p tag */}
-                <p>Id: {this.props.userInfo.id}</p>
-                <p>Name: {this.props.userInfo.name}</p>
-                <p>Username: {this.props.userInfo.username}</p>
-                <p>Email: {this.props.userInfo.email}</p>
-                <p>Street: {this.props.userInfo.address.street}</p>
-                <p>Suite: {this.props.userInfo.address.suite}</p>
-                <p>City: {this.props.userInfo.address.city}</p>
-                <p>Zip Code: {this.props.userInfo.address.zipcode}</p>
-                <p>Geo-lat: {this.props.userInfo.address.geo.lat}</p>
-                <p>Geo-lng: {this.props.userInfo.address.geo.lng}</p>
+                <p onClick={this.anyRowClicked} key={this.props.userInfo.id} >Id: {this.props.userInfo.id}  </p>
+                <p onClick={this.anyRowClicked}>Name: {this.props.userInfo.name}</p>
+                <p onClick={this.anyRowClicked}>Username: {this.props.userInfo.username}</p>
+                <p onClick={this.anyRowClicked}>Email: {this.props.userInfo.email}</p>
+                <p onClick={this.anyRowClicked}>Street: {this.props.userInfo.address.street}</p>
+                <p onClick={this.anyRowClicked}>Suite: {this.props.userInfo.address.suite}</p>
+                <p onClick={this.anyRowClicked}>City: {this.props.userInfo.address.city}</p>
+                <p onClick={this.anyRowClicked}>Zip Code: {this.props.userInfo.address.zipcode}</p>
+                <p onClick={this.anyRowClicked}>Geo-lat: {this.props.userInfo.address.geo.lat}</p>
+                <p onClick={this.anyRowClicked}>Geo-lng: {this.props.userInfo.address.geo.lng}</p>
                 <hr className='breaks'/>
 
             </div>
          );
     }
 }
+
  
 export default UserInformation;

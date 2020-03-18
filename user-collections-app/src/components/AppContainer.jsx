@@ -12,6 +12,8 @@ class AppContainer extends Component {
         //sanity
         console.log(`Raw Data Found ${rawData[0].address.street}`)
 
+        
+
         return ( 
             <Fragment>
                 <h1>User Collections App</h1>
