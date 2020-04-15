@@ -25,8 +25,15 @@ class UserInformation extends Component {
 
         //create an event that will run whenever you click on any property in the browser
         anyRowClicked = (event) =>{
-            
-                console.log(event.key)
+            //not functioning NEED TO FINISH
+            console.log(this.props.userInfo.id)
+                console.log(`Running event ${event.target.name}`)
+
+                //toggle the entire body background color
+                document.querySelector('body').classList.toggle('purple');
+
+                //change color of div
+                event.target.classList.toggle('purple');
                 
             }
             
@@ -36,7 +43,7 @@ class UserInformation extends Component {
         return ( 
             <div>
                 {/* Using this.props pull down each property of the objects and use object notation render each inside of a p tag */}
-                <p onClick={this.anyRowClicked} key={this.props.userInfo.id} >Id: {this.props.userInfo.id}  </p>
+                <p onClick={this.anyRowClicked} name='id' >Id: {this.props.userInfo.id}  </p>
                 <p onClick={this.anyRowClicked}>Name: {this.props.userInfo.name}</p>
                 <p onClick={this.anyRowClicked}>Username: {this.props.userInfo.username}</p>
                 <p onClick={this.anyRowClicked}>Email: {this.props.userInfo.email}</p>
